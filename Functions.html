@@ -63,9 +63,16 @@
 
     var hi=function(){
         return "hi...";
-    }
+    };
 
     console.log(hi());
+
+    var hello=(function(){
+        return function(){
+            return hello;
+        }
+    }());
+
 
     </script>
 
