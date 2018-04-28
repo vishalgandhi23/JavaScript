@@ -30,6 +30,23 @@
     console.log(new Date().getHours());
     console.log(getGreeting(new Date().getHours()));
 
+    function sum(){
+        var sum=0;
+
+        for (var i=0;arguments[i];i++)
+        {
+            sum+=arguments[i];
+        }
+
+        return sum;
+    }
+
+    var sum1=sum(1,2);
+    var sum2=sum(100,75,40);
+    var sum3=sum(45,85,96,10,46,87,96,30,30,50,46);
+
+    console.log(sum1+" "+sum2+" "+sum3);
+
     </script>
 
 </html>
