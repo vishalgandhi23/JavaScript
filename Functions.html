@@ -47,6 +47,20 @@
 
     console.log(sum1+" "+sum2+" "+sum3);
 
+    var name="bob";
+
+    function greet(greeting)
+    {
+        function getPunctuation(){
+            return (greeting==="why") ? "?" : "!";
+        }
+
+        return greeting+" "+name+getPunctuation()+" "+greeting+getPunctuation();
+    }
+
+    console.log(greet(why));
+    console.log(greet(Hi));
+
     </script>
 
 </html>
