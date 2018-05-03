@@ -19,6 +19,17 @@
 
         console.log(this.my_this);
         console.log(this.my_function());
+
+        function truck(model)
+        {
+            this.num_of_tyres=4;
+            this.kilometers=0;
+            this.model=model;
+        }
+
+        var my_truck=new truck("hercules");
+
+        console.log(my_truck);
     </script>
 
 </html>
