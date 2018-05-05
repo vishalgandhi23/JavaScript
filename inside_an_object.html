@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            inside an object
+        </title>
+    </head>
+
+    <body></body>
+
+    <script type="text/javascript">
+        
+        var waitress={
+
+            name : "Ashley",
+            greet : function (custormer){
+                custormer=customer || "there !";
+                return "Hi" + customer + "My name is"+this.name+";what can I get you?";
+            }
+
+        };
+        
+    console.log(waitress.greet("Joey"));
+
+    </script>
+
+</html>
