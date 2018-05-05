@@ -14,12 +14,31 @@
             name : "Ashley",
             greet : function (customer){
                 customer=customer || "there !";
-                return "Hi" + customer + "My name is"+this.name+";what can I get you?";
+                return "Hi, " + customer + " My name is "+this.name+"; what can I get you?";
             }
 
         };
         
+    waitress.name="Rachel";
     console.log(waitress.greet("Joey"));
+
+    var another_waitress={
+        name : "Monica",
+        greet : function(customer){
+            customer=customer || "there !";
+                return "Hi, " + customer + " My name is "+another_waitress.name+"; what can I get you?";
+        }
+    };
+
+    console.log(another_waitress.greet("Ross"));
+
+    var temp=another_waitress;
+
+    console.log(another_waitress.greet("Chandler"));
+
+    another_waitress=null;
+
+    console.log(another_waitress.greet("chandler"));
 
     </script>
 
