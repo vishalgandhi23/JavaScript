@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            apply method
+        </title>
+    </head>
+
+    <body></body>
+    <script type="text/javascript">
+
+        function truck(model,num_of_tires)
+        {
+            this.num_of_tires=num_of_tires;
+            this.model=model;
+            this.kilometers=0;
+        }
+
+        var basic_vehicle={year:2011};
+
+        user_input="speedo 18";
+
+        truck.apply(basic_vehicle,user_input.split(" "));
+
+        console.log(basic_vehicle);
+    </script>
+</html>
