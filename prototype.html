@@ -34,6 +34,25 @@
         console.log("files="+myComputer.files);
         console.log("Size="+myComputer.size);
 
+        function product(name){
+            if(name){
+                this.name=name;
+            }
+        }
+
+        product.prototype.name="to be announced";
+        product.prototype.rating=4;
+
+        var myProduct=new product("iPad");
+
+        console.log(myProduct.name); //iPad
+        console.log(myProduct.rating); //4
+
+        myProduct.rating=5;
+
+        console.log(myProduct.rating); //5
+        console.log(myProduct.prototype.rating) //4
+
     </script>
 
 </htm>
