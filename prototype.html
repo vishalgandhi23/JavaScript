@@ -1,0 +1,39 @@
+<htm>
+    <head>
+        <title>
+            Object oriented programming - Prototype
+        </title>
+    </head>
+
+    <body>
+
+    </body>
+
+    <script type="text/javascript">
+        function computer (name, ram_amount, memory_amount){
+            this.name=name;
+            this.ram=ram_amount;
+            this.size=memory_amount;
+            this.files=[];
+        }
+
+        computer.prototype.store_file=function(filename,filesize){
+            this.files.push(filename);
+            this.size-=filesize;
+        }
+
+        var myComputer=new computer("Vishal",4,1000);
+
+        console.log("Name="+myComputer.name);
+        console.log("Ram="+myComputer.ram);
+        console.log("size="+myComputer.size);
+        console.log("files="+myComputer.files);
+
+        myComputer.store_file("demo.txt",1);
+
+        console.log("files="+myComputer.files);
+        console.log("Size="+myComputer.size);
+
+    </script>
+
+</htm>
