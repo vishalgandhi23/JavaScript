@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>
-            Object Method - toString
+            Object Method - toString & valueOf
         </title>
     </head>
     <body></body>
@@ -21,6 +21,16 @@
         };
 
         console.log(person.toString());
+
+        var account={
+            holder : "Andrew",
+            balance : 100,
+            valueOf : function(){
+                return balance;
+            }
+        };
+
+        console.log(account+100);
         
     </script>
 </html>
