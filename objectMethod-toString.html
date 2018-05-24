@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            Object Method - toString
+        </title>
+    </head>
+    <body></body>
+    <script type='text/javascript'>
+    
+        var o={name : 'Andrew'};
+
+        console.log(o.toString());
+
+        var person={
+            name : 'Vishal',
+            age : 23,
+            occupation : "Web Developer",
+            toString : function(){
+                return this.name+" | "+this.age+" | "+this.occupation;
+            }
+        };
+
+        console.log(person.toString());
+        
+    </script>
+</html>
