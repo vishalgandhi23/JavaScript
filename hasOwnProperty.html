@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+            Object Methods - hasOwnProperty
+        </title>
+    </head>
+    <body></body>
+
+    <script type="text/javascript">
+    function Person(Name){
+        this.Name=name;
+    }
+
+    Person.prototype.legs=2
+
+    var person=new Person('Ross'),prop;
+
+    for (prop in person)
+    {
+        console.log(prop +" : "+person[prop]);
+    }
+
+    for(prop in person){
+        if(person.hasOwnProperty(prop)){
+            console.log(prop +" : "+person[prop]);
+        }
+    }
+    </script>
+</html>
