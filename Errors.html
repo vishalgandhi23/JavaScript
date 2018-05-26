@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Errors</title>
+    </head>
+    <body>
+
+    </body>
+
+    <script type="text/javascript">
+        function makeCoffee(requested_size){
+            var sizes=["small","medium","large"],coffee;
+
+            if(sizes.indexOf(requested_size)<0)
+            {
+                throw new Error('We don\'t offer that size');
+            }
+
+            coffee={
+                size : requested_size,
+                added : ["sugar","cream"]
+                // toString : function(){
+                //     return "size : "+this.size+" | added : "+this.added[0]+","+this.added[1];
+                // }
+            };
+            return coffee;
+        }
+
+        try{
+            // console.log(makeCoffee("medium").toString());
+            console.log( makeCoffee("extra large"));
+        }
+        catch (e){
+            console.log(e.message);
+        }
+    </script>
+</html>
