@@ -1,0 +1,32 @@
+<htm>
+    <head>
+        <title>
+            Closure
+        </title>
+    </head>
+    <body>
+
+    </body>
+
+    <script type="text/javascript">
+        var reveal_secret=(
+            function(){
+                var secret_number=23;
+
+                return function(password){
+                    if(password==='please'){
+                        return secret_number++;
+                    }
+                  return 0;      
+                }
+
+            }()
+        );
+
+
+        console.log(reveal_secret('please'));
+        console.log(reveal_secret('please'));
+        console.log(reveal_secret('sorry'));
+    </script>
+
+</htm>
