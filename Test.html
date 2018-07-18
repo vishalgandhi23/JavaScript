@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>
+            Testing and module pattern
+        </title>
+    </head>
+    <body></body>
+
+    <script type="text/javascript">
+        var Test=(function(){
+            
+            var results=document.createElement("ul");
+            results.id="tests";
+            document.body.appendChild(results);
+
+            function log(class_name,msg){
+                var li=document.createElement("li");
+                li.className=class_name;
+                li.appendChild(document.createTextNode(msg));
+                results.appendChild(li);
+            }
+
+            return{
+                assert : function (bool,msg){
+                    log((bool)?"pass":"fail",msg);
+                },
+                equal : function (first,second,msg){
+                    log((first===second)?"pass":"fail",msg);
+                }
+            };
+        }());
+
+        function Business(name,year_founded){
+            this.name=name;
+            this.year_of_founding=year_founded;
+        }
+        
+        Business.prototype.get_age=function(){
+            return (new Date().getFullYear())-this.year_of_founding;
+        }
+
+        var b=new Business("My Business",2000);
+
+        Test.equal(b.name,"My Business","b.name==='My Business'");
+        Test.equal(b.year_of_founding,2000,"b.year_of_founding===2000");
+
+        Test.assert(Business,"Existance of Business function");
+        
+        Test.assert(b.get_age,"b has get_age");
+        Test.equal(typeof b.get_age,"function","b.get_age is a function");
+
+    </script>
+</html>

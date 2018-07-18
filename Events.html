@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>
+            Events
+        </title>
+    </head>
+    <body>
+        <div id="some_button">Click Me</div>
+    </body>
+
+    <script type="text/javascript">
+    var btn=document.getElementById("some_button");
+
+    function welcome(){
+        alert("Hello");
+    }
+
+    btn.addEventListener("click",welcome,false);
+    </script>
+</html>

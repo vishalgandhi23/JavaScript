@@ -6,19 +6,25 @@
     </head>
 
     <body>
-        <div class="product">
+        <div class="product" id="p1">
             <h2>Pen</h2>
             <p>For writing</p>
         </div>
 
-        <div class="product">
-            <h2>Book</h2>
-            <p>For writing</p>
-        </div>
+        <div class="product" id="p2">
+            <h2>Book</h2><p>For writing</p></div>
 
-        <div class="product">
+        <div class="product" id="p3">
             <h2>Calculator</h2>
             <p>For calculating</p>
+        </div>
+
+        <div id="container"></div>
+
+        <div>Kill this:  <span id="kill_me">Kill me!</span></div>
+
+        <div id="container2">
+            <p id="replace_me">Replace me</p>
         </div>
     </body>
 
@@ -42,6 +48,60 @@
             console.log(child);
             console.log(child.textContent);
         }
+        console.log(products[0].childNodes[1]);
+        var firstProduct=document.getElementById("p1");
+        console.log(firstProduct.childNodes[3].textContent);
+
+        console.log(firstProduct.children[0]);//Just include element nodes
+
+        console.log(products[0].lastChild.textContent);
+        console.log(products[1].lastChild.textContent);
+        console.log(products[1].lastChild.previousSibling.textContent);
+        console.log(products[1].lastChild.parentNode);
+
+        //Below part just includes element nodes
+
+         console.log(products[0].lastElementChild);
+         console.log(products[0].firstElementChild);
+         console.log(products[0].firstElementChild.nextElementSibling);
+         console.log(products[0].lastElementChild.previousElementSibling);
+
+        var paragraph=document.createElement("p"),
+            textnode=document.createTextNode("This is some text");
+
+            paragraph.appendChild(textnode);
+
+            document.getElementById("container").appendChild(paragraph);
+
+            var newTextNode=document.createTextNode("Hello world!"),
+            
+            container=document.getElementById("container");
+
+            textnode=container.firstChild;
+
+            container.insertBefore(newTextNode,textnode);
+
+
+            var child =document.getElementById("kill_me");
+            
+            child.parentNode.removeChild(child);
+
+            var container2=document.getElementById("container2");
+
+            var old_element=document.getElementById("replace_me");
+            var new_element=document.createElement("p");
+
+            new_element.appendChild(document.createTextNode("New element"));
+
+            container2.replaceChild(new_element,old_element);
+
+            container2.setAttribute("class","modal");
+            console.log(container2.getAttribute("class"));
+
+            //container2.id="container3";
+            //container2.className="modal2";
+
+            container2.style.backgroundColor="red";
     </script>
 
 </html>

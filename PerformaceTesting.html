@@ -1,0 +1,54 @@
+<htm>
+    <head>
+        <title>
+            Performance Testing
+        </title>
+    </head>
+    <body></body>
+    <script type="text/javascript">
+    
+        var d1,d2,d3,d4,d5,d6,
+
+            arr1=[1,2],arr2=[],
+
+            i=0,len;
+
+            for(;i<100000;i++)
+            {
+                arr2[i]=i;
+            }
+
+            i=0;
+            len=arr2.length;
+
+            d1=new Date().getTime();
+
+            for(;i<len;i++)
+            {
+                arr1.push(arr2[i]);
+            }
+
+            d2=new Date().getTime();
+
+            arr1=[1,2];
+            d3=new Date().getTime();
+
+            arr1=arr1.concat(arr2);
+
+            d4=new Date().getTime();
+
+            arr1=[1,2];
+
+            d5=new Date().getTime();
+
+            Array.prototype.push.apply(arr1,arr2);
+
+            d6=new Date().getTime();
+
+            console.log("looping and pushing: ",(d2-d1));
+            console.log("array's concat: ",(d4-d2));
+            console.log("push via apply: ",(d6-d5));
+
+    </script>
+
+</htm>
